@@ -4,7 +4,7 @@ enum layers {
     COLEMAK = 0,
     NUMBER,
     FUNCTION,
-    GAMING
+    // GAMING
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NUMBER] = LAYOUT(
                                             KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_MPLY,                                                                                          KC_GRV, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PGUP,
                                             KC_TRNS, KC_5, KC_6, KC_7, KC_8, KC_MNXT,                                                                                      KC_APP, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_PGDN,
-                                            KC_TRNS, KC_9, KC_0, KC_MINS, KC_EQL, KC_MPRV, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS, TG(GAMING), KC_LPRN, KC_RPRN, KC_NO, KC_BSLS, KC_RBRC,
+                                            KC_TRNS, KC_9, KC_0, KC_MINS, KC_EQL, KC_MPRV, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS, KC_TRNS, KC_LPRN, KC_RPRN, KC_NO, KC_BSLS, KC_RBRC,
                                                                                     KC_MUTE, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO
                                             ),
 
@@ -29,12 +29,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                         KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_LALT, KC_LCTL, KC_TRNS,  KC_TRNS, KC_NO
                                                 ),
 
-    [GAMING] = LAYOUT(
-                                            KC_1, KC_TAB, KC_Q, KC_W, KC_E, KC_R,                                                                                                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                            KC_2, KC_LSFT, KC_A, KC_S, KC_D, KC_F,                                                                                                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                            KC_3, KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_SPC, KC_LALT,                                  KC_RSFT, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                                                                            KC_6,KC_4,KC_5,  KC_SPC, KC_LALT,                                KC_RSFT, KC_NO, KC_NO, TG(GAMING), KC_NO
-                                            )};
+    // [GAMING] = LAYOUT(
+    //                                         KC_1, KC_TAB, KC_Q, KC_W, KC_E, KC_R,                                                                                                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    //                                         KC_2, KC_LSFT, KC_A, KC_S, KC_D, KC_F,                                                                                                         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    //                                         KC_3, KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_SPC, KC_LALT,                                  KC_RSFT, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    //                                                                                         KC_6,KC_4,KC_5,  KC_SPC, KC_LALT,                                KC_RSFT, KC_NO, KC_NO, TG(GAMING), KC_NO
+    //                                         )};
 
 #ifdef OLED_DRIVER_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -78,8 +78,8 @@ static void render_status(void) {
         case FUNCTION:
             oled_write_P(PSTR("Function\n\n"), false);
             break;
-        case GAMING:
-            oled_write_P(PSTR("Gamer\n\n"), false);
+        // case GAMING:
+        //     oled_write_P(PSTR("Gamer\n\n"), false);
             break;
         default:
             oled_write_P(PSTR("Undefined\n\n"), false);
